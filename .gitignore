@@ -22,10 +22,10 @@ outputs/evaluation_reports/*
 !outputs/evaluation_reports/.gitkeep
 
 # Python cache files
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
+# __pycache__/
+# *.py[cod]
+# *$py.class
+# *.so
 
 # IDEs
 .idea/
@@ -35,3 +35,5 @@ __pycache__/
 
 # MacOS
 .DS_Store
+
+week09_student_project.pdf
