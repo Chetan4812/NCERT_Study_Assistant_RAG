@@ -1,0 +1,33 @@
+paths:
+  raw_pdf_dir: "data/raw_pdfs/"
+  processed_text_dir: "data/processed_text/"
+  chunks_dir: "data/chunks/"
+  qa_dataset_dir: "data/qa_dataset/"
+  vector_db_dir: "data/vector_db/"
+  evaluation_reports_dir: "outputs/evaluation_reports/"
+
+ingestion:
+  strip_watermarks: true
+  min_paragraph_length: 20 # Ignore tiny fragments
+
+chunking:
+  chunk_size: 500
+  chunk_overlap: 100
+  separators: ["\n\n", "\n", ". ", " ", ""]
+
+embeddings:
+  model_name: "BAAI/bge-large-en-v1.5"
+  normalize_embeddings: true
+  device: "cuda" # Switch to CPU if needed
+
+retrieval:
+  top_k: 4
+
+llm:
+  provider: "ollama"  # Future proofing if you want to switch to 'groq'
+  model_name: "llama3" # the ollama model name, e.g. 'llama3' or 'llama3:8b'
+  temperature: 0.1 # Low temp to avoid hallucination
+
+evaluation:
+  num_synthetic_qs_per_chunk: 2
+  metrics: ["exact_match", "f1_score", "semantic_similarity"]

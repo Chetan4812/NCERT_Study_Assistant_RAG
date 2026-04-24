@@ -1,0 +1,37 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Project Data (Exclude heavy/personal testing data)
+data/raw_pdfs/*
+!data/raw_pdfs/.gitkeep
+data/processed_text/*
+!data/processed_text/.gitkeep
+data/chunks/*
+!data/chunks/.gitkeep
+data/vector_db/*
+!data/vector_db/.gitkeep
+data/qa_dataset/*
+!data/qa_dataset/.gitkeep
+outputs/evaluation_reports/*
+!outputs/evaluation_reports/.gitkeep
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# MacOS
+.DS_Store
